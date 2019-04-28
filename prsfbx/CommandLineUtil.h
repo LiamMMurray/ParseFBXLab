@@ -3,19 +3,9 @@
 enum CMD
 {
         null,
-		help,
+        help,
         cmp
 };
-
-bool args_contains(const char* arg, int argc, char* argv[])
-{
-        for (int i = 0; i < argc; i++)
-        {
-                if (strcmp(arg, argv[i]) == 0)
-                        return true;
-        }
-        return false;
-}
 
 struct command_line
 {
@@ -34,11 +24,9 @@ struct command_line
                         help(CMD::cmp);
                 else
                 {
-                        std::cout << cmd
-                                  << " not a valid command\n";
+                        std::cout << cmd << " not a valid command\n";
                         help();
                 }
-
         }
         // displays help info for the command line arg entered
         // after help or generic help info if no arg was entered
@@ -57,7 +45,7 @@ struct command_line
                 {
                         case CMD::null:
                                 std::cout
-									// clang-format off
+                                    // clang-format off
                                     << "these are common prsfbx commands"
                                        "\n\n"
                                     << "\tcmp\t\t\tcompiles an fbx file into vertex binary file\n "
@@ -89,5 +77,15 @@ struct command_line
 
 				// TODO: add functionality to compile command
         }
+
+		bool args_contain(const char* arg, int argc, char* argv[])
+		{
+				for (int i = 0; i < argc; i++)
+				{
+						if (strcmp(arg, argv[i]) == 0)
+								return true;
+				}
+				return false;
+		}
 };
 command_line* command_line::singleton = new command_line();
