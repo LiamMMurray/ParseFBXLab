@@ -26,5 +26,8 @@
     <ClInclude Include="FileUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FbxUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
