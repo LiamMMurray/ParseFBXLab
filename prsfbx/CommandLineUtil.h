@@ -6,6 +6,7 @@ enum CMD
 		help,
         cmp
 };
+
 bool contains(const char* arg, int argc, char* argv[])
 {
         for (int i = 0; i < argc; i++)
