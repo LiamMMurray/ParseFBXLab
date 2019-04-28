@@ -7,7 +7,7 @@ enum CMD
         cmp
 };
 
-bool contains(const char* arg, int argc, char* argv[])
+bool args_contains(const char* arg, int argc, char* argv[])
 {
         for (int i = 0; i < argc; i++)
         {
