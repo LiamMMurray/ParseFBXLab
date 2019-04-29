@@ -9,7 +9,7 @@ ColumnLimit: 128
 IndentWidth: 8
 AllowShortFunctionsOnASingleLine: false
 BinPackParameters: false
-
+PointerAlignment: Left
 
 BreakBeforeBinaryOperators: None 
 IndentCaseLabels: true
