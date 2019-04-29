@@ -1,17 +1,17 @@
 #pragma once
+#include <Fstream>
 #include <ShlObj_core.h>
+#include <String>
 #include <Windows.h>
-#include <fstream>
-#include <string>
 
 struct file_context
 {
       private:
         file_context(){};
-        static file_context *singleton;
+        static file_context* singleton;
 
       public:
-        static file_context *get()
+        static file_context* get()
         {
                 return singleton;
         }
@@ -78,4 +78,4 @@ struct file_context
                                               path_and_file_name.substr(file_path_end + 1, path_and_file_name.size()));
         }
 };
-file_context *file_context::singleton = new file_context();
+file_context* file_context::singleton = new file_context();

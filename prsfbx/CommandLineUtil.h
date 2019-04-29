@@ -11,10 +11,10 @@ struct command_line_context
 {
       private:
         command_line_context(){};
-        static command_line_context *singleton;
+        static command_line_context* singleton;
 
       public:
-        static command_line_context *get()
+        static command_line_context* get()
         {
                 return singleton;
         }
@@ -24,7 +24,7 @@ struct command_line_context
                 help(CMD::null);
         }
         // displays help info for a specific string command
-        void help(const char *cmd)
+        void help(const char* cmd)
         {
                 if (strcmp(cmd, "cmp") == 0)
                         help(CMD::cmp);
@@ -39,7 +39,7 @@ struct command_line_context
         // displays help info for the command line arg entered
         // after help or generic help info if no arg was entered
         // after help command
-        void help(int argc, char *argv[])
+        void help(int argc, char* argv[])
         {
                 if (argc >= 3)
                         command_line_context::get()->help(argv[2]);
@@ -70,7 +70,7 @@ struct command_line_context
         }
         // compiles a file of line seperated strings into a
         // string-guid pair binary file
-        void cmp(int argc, char *argv[])
+        void cmp(int argc, char* argv[])
         {
                 if (argc <= 2)
                 {
@@ -81,7 +81,7 @@ struct command_line_context
                 // TODO: add functionality to compile command
         }
 
-        bool args_contain(const char *arg, int argc, char *argv[])
+        bool args_contain(const char* arg, int argc, char* argv[])
         {
                 for (int i = 0; i < argc; i++)
                 {
@@ -91,4 +91,4 @@ struct command_line_context
                 return false;
         }
 };
-command_line_context *command_line_context::singleton = new command_line_context();
+command_line_context* command_line_context::singleton = new command_line_context();

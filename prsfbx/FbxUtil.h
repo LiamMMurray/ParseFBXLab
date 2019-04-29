@@ -6,13 +6,16 @@ struct fbx_parse_context
 {
       private:
         fbx_parse_context(){};
-        static fbx_parse_context *singleton;
+        static fbx_parse_context* singleton;
 
       public:
-        FbxManager *              lSdkManager = NULL;
-        FbxScene *                lScene      = NULL;
-        static fbx_parse_context *get() { return singleton; }
-        void                      compile_animation(std::string filepath)
+        FbxManager*               lSdkManager = NULL;
+        FbxScene*                 lScene      = NULL;
+        static fbx_parse_context* get()
+        {
+                return singleton;
+        }
+        void compile_animation(std::string filepath)
         {
                 InitializeSdkObjects(lSdkManager, lScene);
                 FbxString lFilePath(filepath.c_str());
@@ -34,8 +37,8 @@ struct fbx_parse_context
                         }
 
                         // get root node of the fbx scene
-                        FbxNode *lRootNode = lScene->GetRootNode();
+                        FbxNode* lRootNode = lScene->GetRootNode();
                 }
         }
 };
-fbx_parse_context *fbx_parse_context::singleton = new fbx_parse_context();
+fbx_parse_context* fbx_parse_context::singleton = new fbx_parse_context();
