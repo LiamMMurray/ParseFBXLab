@@ -7,7 +7,7 @@ BinPackArguments: false
 UseTab: Never
 ColumnLimit: 128
 IndentWidth: 8
-
+AllowShortFunctionsOnASingleLine: false
 BinPackParameters: false
 
 
