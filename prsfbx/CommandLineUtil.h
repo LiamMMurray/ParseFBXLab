@@ -9,16 +9,16 @@ enum CMD
 
 struct command_line
 {
-       private:
+      private:
         command_line(){};
-        static command_line* singleton;
+        static command_line *singleton;
 
-       public:
-        static command_line* get() { return singleton; }
+      public:
+        static command_line *get() { return singleton; }
         // displays generic help info
         void help() { help(CMD::null); }
         // displays help info for a specific string command
-        void help(const char* cmd)
+        void help(const char *cmd)
         {
                 if (strcmp(cmd, "cmp") == 0)
                         help(CMD::cmp);
@@ -33,7 +33,7 @@ struct command_line
         // displays help info for the command line arg entered
         // after help or generic help info if no arg was entered
         // after help command
-        void help(int argc, char* argv[])
+        void help(int argc, char *argv[])
         {
                 if (argc >= 3)
                         command_line::get()->help(argv[2]);
@@ -45,30 +45,26 @@ struct command_line
         {
                 switch (cmd)
                 {
-                        case CMD::null:
+                        case CMD::null: {
                                 std::cout
-                                    // clang-format off
                                     << "these are common prsfbx commands"
-                                       "\n\n"
-                                    << "\tcmp\t\t\tcompiles an fbx file into vertex binary file\n "
-                                       "\thelp\t\t\tdisplays help info for a specified command or generic help\n";
-									//clang-format on
+                                       "\n\n\tcmp\t\t\tcompiles an fbx file into vertex "
+                                       "binary file\n \thelp\t\t\tdisplays help info for a specified command or generic help\n";
                                 break;
-                        case CMD::cmp:
-                                std::cout
-                                    << "[-i "
-                                       "<input-file-name>]  "
-                                       "[-o "
-                                       "<output-file-name>]";
-								break;
-                        case CMD::help:
-							std::cout << "[<command>]";
+                        }
+                        case CMD::cmp: {
+                                std::cout << "[-i <input-file-name>]  [-o <output-file-name>]";
                                 break;
+                        }
+                        case CMD::help: {
+                                std::cout << "[<command>]";
+                                break;
+                        }
                 }
         }
         // compiles a file of line seperated strings into a
         // string-guid pair binary file
-        void cmp(int argc, char* argv[])
+        void cmp(int argc, char *argv[])
         {
                 if (argc <= 2)
                 {
@@ -77,17 +73,17 @@ struct command_line
                         help(CMD::cmp);
                 }
 
-				// TODO: add functionality to compile command
+                // TODO: add functionality to compile command
         }
 
-		bool args_contain(const char* arg, int argc, char* argv[])
-		{
-				for (int i = 0; i < argc; i++)
-				{
-						if (strcmp(arg, argv[i]) == 0)
-								return true;
-				}
-				return false;
-		}
+        bool args_contain(const char *arg, int argc, char *argv[])
+        {
+                for (int i = 0; i < argc; i++)
+                {
+                        if (strcmp(arg, argv[i]) == 0)
+                                return true;
+                }
+                return false;
+        }
 };
-command_line* command_line::singleton = new command_line();
+command_line *command_line::singleton = new command_line();
