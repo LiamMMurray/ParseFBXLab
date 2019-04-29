@@ -14,9 +14,15 @@ struct command_line_context
         static command_line_context *singleton;
 
       public:
-        static command_line_context *get() { return singleton; }
+        static command_line_context *get()
+        {
+                return singleton;
+        }
         // displays generic help info
-        void help() { help(CMD::null); }
+        void help()
+        {
+                help(CMD::null);
+        }
         // displays help info for a specific string command
         void help(const char *cmd)
         {
@@ -72,7 +78,6 @@ struct command_line_context
                                      "nothing compiled\n";
                         help(CMD::cmp);
                 }
-
                 // TODO: add functionality to compile command
         }
 

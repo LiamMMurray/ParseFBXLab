@@ -11,9 +11,12 @@ struct file_context
         static file_context *singleton;
 
       public:
-        static file_context *get() { return singleton; }
-        std::string          data_in;
-        std::string          data_out;
+        static file_context *get()
+        {
+                return singleton;
+        }
+        std::string data_in;
+        std::string data_out;
 
         // write file relative to current executing process
         void write_file(std::string filepath_and_filename)
