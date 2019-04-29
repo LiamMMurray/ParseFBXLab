@@ -5,7 +5,7 @@ AlignAfterOpenBracket: true
 AlignTrailingComments: true
 BinPackArguments: false
 UseTab: Never
-ColumnLimit: 80
+ColumnLimit: 128
 IndentWidth: 8
 
 BinPackParameters: false
