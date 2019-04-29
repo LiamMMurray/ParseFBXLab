@@ -22,6 +22,8 @@ struct command_line
         {
                 if (strcmp(cmd, "cmp") == 0)
                         help(CMD::cmp);
+                else if (strcmp(cmd, "help") == 0)
+                        help(CMD::help);
                 else
                 {
                         std::cout << cmd << " not a valid command\n";
