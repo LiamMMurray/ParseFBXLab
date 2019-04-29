@@ -13,19 +13,25 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Autodesk">
+      <UniqueIdentifier>{8303130b-fb44-433d-8c9d-3024fc37771e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Autodesk">
+      <UniqueIdentifier>{46ca3fc8-8e1d-43f2-a270-d8004d63db1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Common\AnimationUtility.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Common\Common.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Autodesk</Filter>
     </ClCompile>
     <ClCompile Include="Common\GeometryUtility.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Autodesk</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Common.cpp">
+      <Filter>Source Files\Autodesk</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,14 +44,14 @@
     <ClInclude Include="FbxUtil.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\AnimationUtility.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Common\Common.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Autodesk</Filter>
     </ClInclude>
     <ClInclude Include="Common\GeometryUtility.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Autodesk</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\AnimationUtility.h">
+      <Filter>Header Files\Autodesk</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
