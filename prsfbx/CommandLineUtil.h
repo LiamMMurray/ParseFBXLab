@@ -7,14 +7,14 @@ enum CMD
         cmp
 };
 
-struct command_line
+struct command_line_context
 {
       private:
-        command_line(){};
-        static command_line *singleton;
+        command_line_context(){};
+        static command_line_context *singleton;
 
       public:
-        static command_line *get() { return singleton; }
+        static command_line_context *get() { return singleton; }
         // displays generic help info
         void help() { help(CMD::null); }
         // displays help info for a specific string command
@@ -36,9 +36,9 @@ struct command_line
         void help(int argc, char *argv[])
         {
                 if (argc >= 3)
-                        command_line::get()->help(argv[2]);
+                        command_line_context::get()->help(argv[2]);
                 else
-                        command_line::get()->help();
+                        command_line_context::get()->help();
         }
         // displays help info for a specific command
         void help(CMD cmd)
@@ -86,4 +86,4 @@ struct command_line
                 return false;
         }
 };
-command_line *command_line::singleton = new command_line();
+command_line_context *command_line_context::singleton = new command_line_context();
